@@ -187,7 +187,7 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
               {submissionResult.referenceId}
             </strong>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+          <div className="form-2col" style={{ gap: '0.5rem' }}>
             <div>
               <span style={{ color: 'var(--text-subtle)', display: 'block' }}>Speciality:</span>
               <strong>{submissionResult.speciality}</strong>
@@ -235,11 +235,10 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{
+    <form onSubmit={handleSubmit} className="responsive-card-padded" style={{
       backgroundColor: '#FFFFFF',
       borderRadius: 'var(--radius-lg)',
       border: '1px solid var(--border-subtle)',
-      padding: '2rem',
       boxShadow: 'var(--shadow-lg)'
     }}>
       <div style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem' }}>
@@ -251,7 +250,7 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginBottom: '1.25rem' }}>
+      <div className="grid-auto-240" style={{ marginBottom: '1.25rem' }}>
         {/* Full Name */}
         <div>
           <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-primary-navy)', marginBottom: '0.4rem' }}>

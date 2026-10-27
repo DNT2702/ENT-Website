@@ -95,12 +95,7 @@ export const ContactPage: React.FC = () => {
       </section>
 
       <div className="container" style={{ paddingTop: '3.5rem' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '2.5rem',
-          alignItems: 'flex-start'
-        }}>
+        <div className="grid-2col-split">
           {/* Left: Contact Info & Driving Directions */}
           <div style={{ minWidth: 0 }}>
             {/* Primary Contact Card */}

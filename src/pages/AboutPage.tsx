@@ -45,13 +45,7 @@ export const AboutPage: React.FC = () => {
       {/* Main Content */}
       <div className="container" style={{ paddingTop: '3.5rem' }}>
         {/* Hospital Mission & Philosophy */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '3rem',
-          alignItems: 'center',
-          marginBottom: '4rem'
-        }}>
+        <div className="grid-2col-split" style={{ alignItems: 'center', marginBottom: '4rem' }}>
           <div>
             <span className="section-badge">Our Mission &amp; Purpose</span>
             <h2 style={{ fontSize: '2rem', color: 'var(--color-primary-navy)', marginBottom: '1.25rem' }}>
@@ -99,11 +93,7 @@ export const AboutPage: React.FC = () => {
             <h2 className="section-title">The Cornerstones of Our Practice</h2>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.75rem'
-          }}>
+          <div className="grid-cards-3">
             <div className="card">
               <div style={{
                 width: '42px',
@@ -180,12 +170,7 @@ export const AboutPage: React.FC = () => {
           border: '1px solid var(--border-subtle)',
           marginBottom: '3rem'
         }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2.5rem',
-            alignItems: 'center'
-          }}>
+          <div className="grid-surgeon" style={{ gap: '2.5rem' }}>
             <div>
               <img
                 src={leadDoctor.image}

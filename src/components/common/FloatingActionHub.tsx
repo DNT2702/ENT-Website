@@ -51,51 +51,17 @@ export const FloatingActionHub: React.FC = () => {
       {/* Floating Pill Button at Bottom Right (as seen in video) */}
       <button
         onClick={() => setIsOpen(true)}
-        className="pill-dark"
-        style={{
-          position: 'fixed',
-          bottom: '1.5rem',
-          right: '1.5rem',
-          zIndex: 999,
-          boxShadow: '0 8px 25px rgba(10, 25, 47, 0.25)',
-          padding: '0.65rem 1.25rem',
-          fontSize: '0.875rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem'
-        }}
+        className="pill-dark floating-aura-btn"
         id="aura-assistant-btn"
       >
         <Sparkles size={16} color="#38BDF8" />
-        <span>Ask Aura, our assistant</span>
+        <span>Ask Aura<span className="aura-full-text">, our assistant</span></span>
       </button>
 
       {/* Aura Assistant Dialog Modal */}
       {isOpen && (
-        <div style={{
-          position: 'fixed',
-          inset: 0,
-          backgroundColor: 'rgba(10, 25, 47, 0.5)',
-          backdropFilter: 'blur(6px)',
-          zIndex: 10000,
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'flex-end',
-          padding: '1.5rem'
-        }}>
-          <div style={{
-            width: '100%',
-            maxWidth: '400px',
-            height: '560px',
-            backgroundColor: '#FFFFFF',
-            borderRadius: '24px',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.3)',
-            border: '1px solid #E2E8F0',
-            display: 'flex',
-            flexDirection: 'column',
-            overflow: 'hidden',
-            animation: 'fadeInUp 0.25s ease'
-          }}>
+        <div className="aura-modal-backdrop">
+          <div className="aura-modal-content">
             {/* Header */}
             <div style={{
               backgroundColor: '#0A192F',

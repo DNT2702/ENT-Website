@@ -70,11 +70,7 @@ export const SpecialityDetailPage: React.FC = () => {
 
       {/* Main Content Layout */}
       <div className="container" style={{ paddingTop: '3.5rem' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '2.5rem'
-        }}>
+        <div className="grid-2col-split">
           {/* Left Column: Deep Clinical Information */}
           <div style={{ minWidth: 0 }}>
             {/* Overview Section */}
@@ -109,7 +105,7 @@ export const SpecialityDetailPage: React.FC = () => {
               <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
                 We utilize verified objective diagnostic technologies so that treatment decisions are supported by measurable clinical evidence:
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
+              <div className="grid-auto-240" style={{ gap: '0.75rem' }}>
                 {specialty.diagnosticTechnologies.map((tech, i) => (
                   <div
                     key={i}
@@ -153,9 +149,7 @@ export const SpecialityDetailPage: React.FC = () => {
                       {cond.summary}
                     </p>
 
-                    <div style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    <div className="grid-auto-180" style={{
                       gap: '1rem',
                       backgroundColor: 'var(--bg-surface-subtle)',
                       borderRadius: 'var(--radius-md)',

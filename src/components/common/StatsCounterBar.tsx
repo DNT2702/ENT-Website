@@ -41,22 +41,20 @@ export const StatsCounterBar: React.FC = () => {
   ];
 
   return (
-    <div style={{
-      backgroundColor: '#FFFFFF',
-      borderRadius: 'var(--radius-xl)',
-      border: '1px solid var(--border-subtle)',
-      padding: '2.5rem 1.5rem',
-      boxShadow: '0 20px 40px -15px rgba(10, 37, 64, 0.08)',
-      marginTop: '-2.5rem',
-      position: 'relative',
-      zIndex: 10
-    }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '2rem',
-        alignItems: 'center'
-      }}>
+    <div
+      className="stats-bar-wrapper"
+      style={{
+        backgroundColor: '#FFFFFF',
+        borderRadius: 'var(--radius-xl)',
+        border: '1px solid var(--border-subtle)',
+        padding: '2.5rem 1.5rem',
+        boxShadow: '0 20px 40px -15px rgba(10, 37, 64, 0.08)',
+        marginTop: '-2.5rem',
+        position: 'relative',
+        zIndex: 10
+      }}
+    >
+      <div className="grid-auto-180" style={{ gap: '1.5rem', alignItems: 'center' }}>
         {stats.map((stat, idx) => (
           <div
             key={idx}
@@ -116,6 +114,10 @@ export const StatsCounterBar: React.FC = () => {
 
       <style>{`
         @media (max-width: 768px) {
+          .stats-bar-wrapper {
+            padding: 1.5rem 1rem !important;
+            margin-top: -1.5rem !important;
+          }
           .stat-box {
             border-right: none !important;
             border-bottom: 1px solid var(--border-subtle);
@@ -123,6 +125,7 @@ export const StatsCounterBar: React.FC = () => {
           }
           .stat-box:last-child {
             border-bottom: none;
+            padding-bottom: 0;
           }
         }
       `}</style>

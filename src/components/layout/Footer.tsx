@@ -23,10 +23,8 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* 3 Columns Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '3rem',
+        <div className="grid-cards-3" style={{
+          gap: '2.5rem',
           paddingBottom: '3rem',
           borderBottom: '1px solid rgba(255, 255, 255, 0.12)'
         }}>

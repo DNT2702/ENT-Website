@@ -135,12 +135,12 @@ export const HomePage: React.FC = () => {
 
             {/* Main Headline */}
             <h1 style={{
-              fontSize: 'clamp(2.85rem, 5.8vw, 4.5rem)',
+              fontSize: 'clamp(2.15rem, 6.2vw, 4.5rem)',
               fontWeight: 800,
               color: '#FFFFFF',
-              lineHeight: 1.08,
+              lineHeight: 1.1,
               letterSpacing: '-0.035em',
-              marginBottom: '1.5rem',
+              marginBottom: '1.25rem',
               fontFamily: 'var(--font-heading)'
             }}>
               Hear clearly.<br />
@@ -150,17 +150,17 @@ export const HomePage: React.FC = () => {
 
             {/* Paragraph Subtitle */}
             <p style={{
-              fontSize: '1.125rem',
+              fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)',
               color: '#CBD5E1',
               lineHeight: 1.65,
-              marginBottom: '2.25rem',
+              marginBottom: '2rem',
               maxWidth: '580px'
             }}>
               Asian Superspeciality ENT Hospital, Visakhapatnam — advanced ENT, otology, neurotology &amp; skull base care led by <strong style={{ color: '#FFFFFF' }}>Dr. Pradeep Vundavalli</strong>, Gold Medalist with lateral skull base training in France.
             </p>
 
             {/* 3 Pills Row */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
               <a
                 href="#booking"
                 onClick={(e) => {
@@ -240,12 +240,7 @@ export const HomePage: React.FC = () => {
         padding: '1.5rem 0'
       }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1.5rem',
-            fontSize: '0.8125rem'
-          }}>
+          <div className="timings-grid">
             <div>
               <div style={{ color: '#64748B', fontWeight: 700, fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 MON–SAT
@@ -342,9 +337,8 @@ export const HomePage: React.FC = () => {
           <div className="bento-grid">
             {/* Bento Card 1 (Span 6): Vertigo & Balance */}
             <div
-              className="bento-card"
+              className="bento-card bento-span-6"
               style={{
-                gridColumn: 'span 6',
                 minHeight: '260px',
                 padding: '2rem',
                 display: 'flex',
@@ -371,9 +365,8 @@ export const HomePage: React.FC = () => {
 
             {/* Bento Card 2 (Span 6): Advanced Ear Surgery & Otology */}
             <div
-              className="bento-card"
+              className="bento-card bento-span-6"
               style={{
-                gridColumn: 'span 6',
                 minHeight: '260px',
                 padding: '2rem',
                 display: 'flex',
@@ -400,9 +393,8 @@ export const HomePage: React.FC = () => {
 
             {/* Bento Card 3 (Span 4): Hearing Reconstruction & Implants */}
             <div
-              className="bento-card"
+              className="bento-card bento-span-4"
               style={{
-                gridColumn: 'span 4',
                 padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -426,9 +418,8 @@ export const HomePage: React.FC = () => {
 
             {/* Bento Card 4 (Span 4 - Big Blue Center Accent Card in Video!): Coblation Tonsils */}
             <div
-              className="bento-card"
+              className="bento-card bento-span-4"
               style={{
-                gridColumn: 'span 4',
                 padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -464,9 +455,8 @@ export const HomePage: React.FC = () => {
 
             {/* Bento Card 5 (Span 4): Sinus, Nose & Rhinoplasty with 4K badge */}
             <div
-              className="bento-card"
+              className="bento-card bento-span-4"
               style={{
-                gridColumn: 'span 4',
                 padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -500,9 +490,8 @@ export const HomePage: React.FC = () => {
 
             {/* Bento Card 6 (Span 12 - Full Width Bottom): Allergy, Snoring & Sleep Airway */}
             <div
-              className="bento-card"
+              className="bento-card bento-span-12"
               style={{
-                gridColumn: 'span 12',
                 padding: '2.25rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -562,12 +551,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* 2-Column Interactive Widget */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem',
-            alignItems: 'start'
-          }}>
+          <div className="grid-2col-split">
             {/* Left Column: List of Selectable Symptoms */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {symptomsList.map((item, idx) => {
@@ -587,17 +571,19 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Column: Dynamic Diagnosis & Action Card (Elevated white card in video) */}
-            <div style={{
-              backgroundColor: '#FFFFFF',
-              borderRadius: '24px',
-              border: '1px solid #E2E8F0',
-              padding: '2.5rem',
-              boxShadow: '0 15px 35px -5px rgba(10, 25, 47, 0.08)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              minHeight: '340px'
-            }}>
+            <div
+              className="responsive-card-padded"
+              style={{
+                backgroundColor: '#FFFFFF',
+                borderRadius: '24px',
+                border: '1px solid #E2E8F0',
+                boxShadow: '0 15px 35px -5px rgba(10, 25, 47, 0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                minHeight: '340px'
+              }}
+            >
               <div>
                 <div style={{
                   fontSize: '0.75rem',
@@ -680,12 +666,7 @@ export const HomePage: React.FC = () => {
         position: 'relative'
       }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
-            alignItems: 'center'
-          }}>
+          <div className="grid-surgeon">
             {/* Left: Surgeon Operating Photo with Badge */}
             <div style={{ position: 'relative' }}>
               <div style={{
@@ -697,7 +678,7 @@ export const HomePage: React.FC = () => {
                 <img
                   src={leadDoctor.image}
                   alt="Dr. Pradeep Vundavalli performing microscopic surgery"
-                  style={{ width: '100%', height: '440px', objectFit: 'cover', display: 'block' }}
+                  style={{ width: '100%', height: 'auto', maxHeight: '440px', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }}
                 />
               </div>
 
@@ -766,12 +747,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* 3 Grid Credential Cards */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                gap: '1rem',
-                marginBottom: '1.75rem'
-              }}>
+              <div className="grid-auto-180" style={{ marginBottom: '1.75rem' }}>
                 <div style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
                   border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -872,11 +848,7 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
-            gap: '2rem'
-          }}>
+          <div className="grid-cards-3">
             {/* Card A */}
             <div className="card" style={{ padding: '0', overflow: 'hidden', borderRadius: '20px' }}>
               <div style={{ position: 'relative', height: '220px' }}>
@@ -1028,12 +1000,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* 4 Steps Row */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '1.5rem',
-            marginBottom: '3rem'
-          }}>
+          <div className="grid-cards-4" style={{ marginBottom: '3rem' }}>
             {[
               { num: '01', title: 'Listen & look', desc: 'Thorough clinical history with video otoscopy / endoscopy on a live screen — you see what we see.' },
               { num: '02', title: 'Evidence-led diagnostics', desc: 'Only the investigations that answer a clinical question.' },
@@ -1045,7 +1012,7 @@ export const HomePage: React.FC = () => {
                 style={{
                   backgroundColor: '#FFFFFF',
                   borderRadius: '16px',
-                  padding: '2rem 1.75rem',
+                  padding: '1.75rem 1.5rem',
                   border: '1px solid #E2E8F0',
                   boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
                 }}
@@ -1071,13 +1038,15 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* What to bring Container */}
-          <div style={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: '20px',
-            padding: '2rem 2.5rem',
-            border: '1px solid #E2E8F0',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
-          }}>
+          <div
+            className="responsive-card-padded"
+            style={{
+              backgroundColor: '#FFFFFF',
+              borderRadius: '20px',
+              border: '1px solid #E2E8F0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem' }}>
               <FileText size={20} color="#0284C7" />
               <div>
@@ -1090,13 +1059,7 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '1.25rem',
-              fontSize: '0.875rem',
-              color: '#334155'
-            }}>
+            <div className="grid-auto-240" style={{ fontSize: '0.875rem', color: '#334155' }}>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <span style={{ color: '#0284C7', fontWeight: 800 }}>01</span>
                 <span>Previous ENT prescriptions, ear drops, discharge cards</span>
@@ -1127,21 +1090,19 @@ export const HomePage: React.FC = () => {
           ========================================================================= */}
       <section style={{ padding: '5rem 0', backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2rem'
-          }}>
+          <div className="grid-2col">
             {/* Left Card: Cashless Mediclaim */}
-            <div style={{
-              backgroundColor: '#F8FAFC',
-              borderRadius: '24px',
-              border: '1px solid #E2E8F0',
-              padding: '2.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}>
+            <div
+              className="responsive-card-padded"
+              style={{
+                backgroundColor: '#F8FAFC',
+                borderRadius: '24px',
+                border: '1px solid #E2E8F0',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+            >
               <div>
                 <div style={{
                   fontSize: '0.72rem',
@@ -1197,16 +1158,18 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Card: Dark Blue Card - After Ear Surgery */}
-            <div style={{
-              backgroundColor: '#0F2A4A',
-              backgroundImage: 'linear-gradient(145deg, #0A192F 0%, #16365C 100%)',
-              borderRadius: '24px',
-              padding: '2.5rem',
-              color: '#FFFFFF',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}>
+            <div
+              className="responsive-card-padded"
+              style={{
+                backgroundColor: '#0F2A4A',
+                backgroundImage: 'linear-gradient(145deg, #0A192F 0%, #16365C 100%)',
+                borderRadius: '24px',
+                color: '#FFFFFF',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+            >
               <div>
                 <div style={{
                   fontSize: '0.72rem',
@@ -1251,12 +1214,7 @@ export const HomePage: React.FC = () => {
           ========================================================================= */}
       <section id="faq" style={{ padding: '5rem 0', backgroundColor: '#F8FAFC' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
-            alignItems: 'start'
-          }}>
+          <div className="grid-2col-split">
             {/* Left Column: Heading & Patient Care Picture */}
             <div>
               <div style={{
@@ -1471,12 +1429,7 @@ export const HomePage: React.FC = () => {
           ========================================================================= */}
       <section id="booking" style={{ padding: '5.5rem 0', backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
-            alignItems: 'start'
-          }}>
+          <div className="grid-2col-split">
             {/* Left Column: Heading & Details */}
             <div>
               <div style={{
@@ -1521,11 +1474,11 @@ export const HomePage: React.FC = () => {
             {/* Right Column: Form Fields */}
             <form
               onSubmit={handleWhatsAppBooking}
+              className="responsive-card-padded"
               style={{
                 backgroundColor: '#FFFFFF',
                 borderRadius: '24px',
                 border: '1px solid #E2E8F0',
-                padding: '2.5rem',
                 boxShadow: '0 15px 35px -5px rgba(10, 25, 47, 0.06)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -1533,7 +1486,7 @@ export const HomePage: React.FC = () => {
               }}
             >
               {/* Row 1: Name & Phone */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="form-2col">
                 <input
                   type="text"
                   required
@@ -1568,7 +1521,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Row 2: Date & Slot */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="form-2col">
                 <input
                   type="date"
                   value={formData.date}

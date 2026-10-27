@@ -63,17 +63,13 @@ export const DoctorsPage: React.FC = () => {
           boxShadow: 'var(--shadow-lg)',
           marginBottom: '3rem'
         }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem'
-          }}>
+          <div className="grid-surgeon" style={{ gap: '2.5rem' }}>
             {/* Left: Doctor Portrait & Quick Info */}
             <div style={{ position: 'relative' }}>
               <img
                 src={leadDoctor.image}
                 alt={leadDoctor.name}
-                style={{ width: '100%', height: '100%', minHeight: '420px', objectFit: 'cover' }}
+                style={{ width: '100%', height: 'auto', minHeight: '320px', maxHeight: '460px', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }}
               />
               <div style={{
                 position: 'absolute',
@@ -99,7 +95,7 @@ export const DoctorsPage: React.FC = () => {
             </div>
 
             {/* Right: Detailed Credentials */}
-            <div style={{ padding: '2.5rem 2.5rem 2.5rem 0' }}>
+            <div className="responsive-card-padded" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <span className="section-badge">Lead Surgeon</span>
               <h2 style={{ fontSize: '2.25rem', color: 'var(--color-primary-navy)', marginBottom: '0.25rem' }}>
                 {leadDoctor.name}
@@ -171,7 +167,7 @@ export const DoctorsPage: React.FC = () => {
                   <Clock size={16} />
                   <span>Consultation Timetable (Seethammapeta OPD)</span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', fontSize: '0.875rem' }}>
+                <div className="grid-auto-180" style={{ gap: '0.75rem', fontSize: '0.875rem' }}>
                   <div>
                     <span style={{ color: 'var(--text-subtle)', display: 'block', fontSize: '0.75rem' }}>Morning OPD:</span>
                     <strong>{leadDoctor.opdSchedule.morning}</strong>

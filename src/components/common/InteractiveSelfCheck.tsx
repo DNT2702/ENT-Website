@@ -219,12 +219,14 @@ export const InteractiveSelfCheck: React.FC = () => {
       </div>
 
       {/* Pathway Content Grid */}
-      <div style={{
-        backgroundColor: 'var(--bg-surface-subtle)',
-        borderRadius: 'var(--radius-lg)',
-        padding: '2rem',
-        border: '1px solid var(--border-subtle)'
-      }}>
+      <div
+        className="responsive-card-padded"
+        style={{
+          backgroundColor: 'var(--bg-surface-subtle)',
+          borderRadius: 'var(--radius-lg)',
+          border: '1px solid var(--border-subtle)'
+        }}
+      >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
           <div>
             <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-primary-teal)' }}>
@@ -246,12 +248,7 @@ export const InteractiveSelfCheck: React.FC = () => {
         </div>
 
         {/* 3-Column Clinical Comparison Card */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '1.25rem',
-          marginBottom: '1.5rem'
-        }}>
+        <div className="grid-auto-240" style={{ marginBottom: '1.5rem' }}>
           {/* Col 1: Symptoms */}
           <div style={{
             backgroundColor: '#FFFFFF',

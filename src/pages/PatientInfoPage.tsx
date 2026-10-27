@@ -61,12 +61,7 @@ export const PatientInfoPage: React.FC = () => {
 
       <div className="container" style={{ paddingTop: '3.5rem' }}>
         {/* Section 1: What to Bring & Test Preparation */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '2rem',
-          marginBottom: '3.5rem'
-        }}>
+        <div className="grid-2col" style={{ marginBottom: '3.5rem' }}>
           {/* Card 1: Checklist */}
           <div className="card" style={{ backgroundColor: '#FFFFFF' }}>
             <div style={{
@@ -189,10 +184,7 @@ export const PatientInfoPage: React.FC = () => {
             Asian Superspeciality ENT Hospital assists patients with documentation for cashless pre-authorization and reimbursement claims across major health insurance providers and Third-Party Administrators (TPAs) for planned surgical procedures (Tympanoplasty, Mastoidectomy, FESS Sinus Surgery, Septoplasty, and Coblation Adenotonsillectomy).
           </p>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '1.25rem',
+          <div className="grid-auto-240" style={{
             backgroundColor: 'var(--bg-surface-subtle)',
             borderRadius: 'var(--radius-lg)',
             padding: '1.5rem',
@@ -262,7 +254,7 @@ export const PatientInfoPage: React.FC = () => {
             Essential home precautions following eardrum or mastoid surgery to protect your healing graft:
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+          <div className="grid-auto-280">
             <div style={{ border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '1.25rem' }}>
               <h3 style={{ fontSize: '1rem', color: 'var(--color-primary-navy)', marginBottom: '0.4rem' }}>
                 1. Strict Water Precautions

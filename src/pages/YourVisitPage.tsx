@@ -125,12 +125,7 @@ export const YourVisitPage: React.FC = () => {
 
       {/* OPD Schedule & Timings Card Grid */}
       <div className="container" style={{ paddingTop: '3.5rem' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-          marginBottom: '3.5rem'
-        }}>
+        <div className="grid-cards-3" style={{ marginBottom: '3.5rem' }}>
           {/* Morning Clinic */}
           <div style={{
             backgroundColor: '#FFFFFF',
@@ -258,11 +253,7 @@ export const YourVisitPage: React.FC = () => {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '2rem'
-          }}>
+          <div className="grid-cards-4">
             {[
               {
                 step: '01',
@@ -308,20 +299,17 @@ export const YourVisitPage: React.FC = () => {
         </div>
 
         {/* 2-Column Split: What to Bring & Cashless Insurance */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '2rem',
-          marginBottom: '3.5rem'
-        }}>
+        <div className="grid-2col" style={{ marginBottom: '3.5rem' }}>
           {/* Left: What to Bring Checklist */}
-          <div style={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: '24px',
-            padding: '2.5rem',
-            border: '1px solid #E2E8F0',
-            boxShadow: '0 8px 24px -4px rgba(10, 25, 47, 0.05)'
-          }}>
+          <div
+            className="responsive-card-padded"
+            style={{
+              backgroundColor: '#FFFFFF',
+              borderRadius: '24px',
+              border: '1px solid #E2E8F0',
+              boxShadow: '0 8px 24px -4px rgba(10, 25, 47, 0.05)'
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
               <div style={{
                 width: '40px',
@@ -363,17 +351,19 @@ export const YourVisitPage: React.FC = () => {
           </div>
 
           {/* Right: Cashless Mediclaim & Insurance */}
-          <div style={{
-            backgroundColor: '#0F2A4A',
-            backgroundImage: 'linear-gradient(145deg, #0A192F 0%, #16365C 100%)',
-            borderRadius: '24px',
-            padding: '2.5rem',
-            color: '#FFFFFF',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            boxShadow: '0 8px 30px -4px rgba(10, 25, 47, 0.2)'
-          }}>
+          <div
+            className="responsive-card-padded"
+            style={{
+              backgroundColor: '#0F2A4A',
+              backgroundImage: 'linear-gradient(145deg, #0A192F 0%, #16365C 100%)',
+              borderRadius: '24px',
+              color: '#FFFFFF',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              boxShadow: '0 8px 30px -4px rgba(10, 25, 47, 0.2)'
+            }}
+          >
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <div style={{

@@ -93,11 +93,7 @@ export const SpecialitiesPage: React.FC = () => {
             </button>
           </div>
         ) : (
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
-            gap: '2rem'
-          }}>
+          <div className="grid-auto-320">
             {filteredSpecialties.map((spec) => (
               <div
                 key={spec.id}

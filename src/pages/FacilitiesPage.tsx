@@ -48,18 +48,17 @@ export const FacilitiesPage: React.FC = () => {
             return (
               <div
                 key={fac.id}
+                className="grid-2col"
                 style={{
                   backgroundColor: '#FFFFFF',
                   borderRadius: 'var(--radius-xl)',
                   border: '1px solid var(--border-subtle)',
                   overflow: 'hidden',
                   boxShadow: 'var(--shadow-md)',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                   alignItems: 'center'
                 }}
               >
-                <div style={{ order: isReversed ? 2 : 1, height: '100%', minHeight: '340px' }}>
+                <div style={{ order: isReversed ? 2 : 1, width: '100%', height: 'auto', minHeight: '260px', maxHeight: '360px', aspectRatio: '16/10' }}>
                   <img
                     src={fac.image}
                     alt={fac.title}
@@ -67,7 +66,7 @@ export const FacilitiesPage: React.FC = () => {
                   />
                 </div>
 
-                <div style={{ order: isReversed ? 1 : 2, padding: '2.5rem' }}>
+                <div className="responsive-card-padded" style={{ order: isReversed ? 1 : 2 }}>
                   <span className="section-badge">{fac.category}</span>
                   <h2 style={{ fontSize: '1.75rem', color: 'var(--color-primary-navy)', marginBottom: '1rem' }}>
                     {fac.title}

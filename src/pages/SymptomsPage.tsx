@@ -267,11 +267,7 @@ export const SymptomsPage: React.FC = () => {
 
       {/* Main Symptoms Grid */}
       <div className="container" style={{ paddingTop: '3.5rem' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: '2rem'
-        }}>
+        <div className="grid-auto-320">
           {filteredSymptoms.map((item) => (
             <div
               key={item.id}
