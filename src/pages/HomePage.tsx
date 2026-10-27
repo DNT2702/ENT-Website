@@ -95,41 +95,16 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#FFFFFF', color: '#0F172A', overflowX: 'hidden' }}>
+    <div style={{ backgroundColor: '#FFFFFF', color: '#0F172A', overflowX: 'hidden', width: '100%', maxWidth: '100%' }}>
       {/* =========================================================================
-          1. HERO SECTION (Exact video typography & layout)
+          1. HERO SECTION (Responsive typography & layout)
           ========================================================================= */}
-      <section style={{
-        position: 'relative',
-        minHeight: '640px',
-        paddingTop: '5rem',
-        paddingBottom: '5.5rem',
-        background: `linear-gradient(to right, rgba(10, 25, 47, 0.96) 0%, rgba(10, 25, 47, 0.88) 45%, rgba(10, 25, 47, 0.50) 75%, rgba(10, 25, 47, 0.20) 100%), url('/images/hero.jpg') center right / cover no-repeat`,
-        color: '#FFFFFF',
-        display: 'flex',
-        alignItems: 'center',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)'
-      }}>
+      <section className="hero-section">
         <div className="container">
           <div style={{ maxWidth: '680px' }}>
             {/* Eyebrow badge */}
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.55rem',
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              letterSpacing: '0.14em',
-              color: '#38BDF8',
-              textTransform: 'uppercase',
-              marginBottom: '1.25rem',
-              backgroundColor: 'rgba(56, 189, 248, 0.12)',
-              border: '1px solid rgba(56, 189, 248, 0.28)',
-              padding: '0.35rem 0.85rem',
-              borderRadius: '9999px',
-              backdropFilter: 'blur(8px)'
-            }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#38BDF8', display: 'inline-block' }} />
+            <div className="hero-eyebrow-badge">
+              <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#38BDF8', display: 'inline-block', flexShrink: 0 }} />
               <span>ENT • OTOLOGY • NEUROTOLOGY • SKULL BASE</span>
             </div>
 
@@ -160,7 +135,7 @@ export const HomePage: React.FC = () => {
             </p>
 
             {/* 3 Pills Row */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <div className="hero-cta-group">
               <a
                 href="#booking"
                 onClick={(e) => {

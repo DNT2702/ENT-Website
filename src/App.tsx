@@ -37,11 +37,11 @@ const ScrollToTop: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
       <ScrollToTop />
       <Navbar />
 
-      <main style={{ flex: 1 }}>
+      <main style={{ flex: 1, width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

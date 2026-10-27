@@ -82,9 +82,24 @@ html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -243,6 +258,13 @@ img {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
   }
 }
 
@@ -765,7 +787,23 @@ img {
   border-color: #CBD5E1;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 641px) and (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  .bento-span-6,
+  .bento-span-4 {
+    grid-column: span 1 !important;
+  }
+
+  .bento-span-12 {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (max-width: 640px) {
   .bento-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
@@ -778,13 +816,89 @@ img {
   .bento-span-12 {
     grid-column: 1 / -1 !important;
   }
-}
 
-@media (max-width: 640px) {
   .bento-card {
     padding: 1.35rem 1.15rem !important;
     border-radius: 16px !important;
     min-height: 180px !important;
+  }
+}
+
+/* ==========================================================================
+   Hero Section Layout & Mobile Fluidity
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 640px;
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  background: linear-gradient(to right, rgba(10, 25, 47, 0.96) 0%, rgba(10, 25, 47, 0.88) 45%, rgba(10, 25, 47, 0.50) 75%, rgba(10, 25, 47, 0.20) 100%), url('/images/hero.jpg') center right / cover no-repeat;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.hero-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #38BDF8;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  background-color: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  max-width: 100%;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+    /* Rich, seamless dark navy overlay across entire phone / tablet screen so the bright white reception wall of hero.jpg never creates an awkward gap or cuts into text */
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.94) 0%, rgba(10, 25, 47, 0.91) 45%, rgba(10, 25, 47, 0.96) 100%), url('/images/hero.jpg') center / cover no-repeat !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .hero-cta-group > a,
+  .hero-cta-group > button,
+  .hero-cta-group > div {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box;
+  }
+
+  .hero-eyebrow-badge {
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 12px;
+    line-height: 1.4;
   }
 }
 
@@ -972,12 +1086,26 @@ img {
   .btn-nav-book span {
     font-size: 0.8125rem;
   }
+
+  .nav-brand-title {
+    font-size: 1.125rem !important;
+  }
+
+  .nav-brand-sub {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.04em !important;
+  }
 }
 
 @media (max-width: 380px) {
+  .nav-brand-sub {
+    display: none !important;
+  }
+
   .btn-nav-book span {
     display: none;
   }
+
   .btn-nav-book {
     padding: 0.55rem !important;
     border-radius: var(--radius-md) !important;

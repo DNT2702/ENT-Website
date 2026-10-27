@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
         gap: '0.75rem'
       }}>
         {/* Hospital Brand Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', flexShrink: 0 }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', flexShrink: 1, minWidth: 0 }}>
           <div style={{
             width: '42px',
             height: '42px',
@@ -64,12 +64,13 @@ export const Navbar: React.FC = () => {
             alignItems: 'center',
             justifyContent: 'center',
             color: '#FFFFFF',
-            boxShadow: '0 4px 12px rgba(29, 78, 216, 0.25)'
+            boxShadow: '0 4px 12px rgba(29, 78, 216, 0.25)',
+            flexShrink: 0
           }}>
             <Ear size={22} strokeWidth={2.2} />
           </div>
-          <div>
-            <div style={{
+          <div style={{ minWidth: 0 }}>
+            <div className="nav-brand-title" style={{
               fontFamily: 'var(--font-heading)',
               fontSize: '1.25rem',
               fontWeight: 800,
@@ -80,7 +81,7 @@ export const Navbar: React.FC = () => {
             }}>
               Asian ENT
             </div>
-            <div style={{
+            <div className="nav-brand-sub" style={{
               fontSize: '0.6875rem',
               fontWeight: 700,
               color: '#64748B',
